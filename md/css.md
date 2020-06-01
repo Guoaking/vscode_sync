@@ -106,6 +106,7 @@
 10. 透视
     1.  单独 perspective（900px） 透视的力度 距离
     2. 整体父级 perspective: 900px  影响子元素 不影响父级。
-   ### 其他
+    3. 
+### 其他
 * background-clip :content-box  不包括padding
 https://mubu.com/colla/2GHhOkgaWk9
