@@ -80,7 +80,7 @@
 7. 对文本节点
 
 
-### 变形动画
+### 基本效果
 
 1. 二维移动
    1. transfrom: translateX|Y(10px) || translate（-50%）   {{正负|| 100% }}
@@ -101,12 +101,34 @@
 8. 旋转
    1. rotate3d
    2. 行元素不转，块元素
-9.  倾斜
+9. 倾斜
    3. skewX(45deg) 
 10. 透视
     1.  单独 perspective（900px） 透视的力度 距离
     2. 整体父级 perspective: 900px  影响子元素 不影响父级。
-    3. 
+    3. transform-style: preserve-3d   z轴参与的需要呈现3d效果
+11. 背面不可见
+    1.  backface-visiblity:hidden
+    2.  给父元素需要加3d设置
+
+
+### 过渡效果
+1. transition: all|broder-radius liner 2s 0s,  
+2. transition-duration:2s ,2s ,2s  有的有有的没有
+3. transition-property: background   @ 定制需要过渡的属性。
+4. <p style="color : red">我是你爸爸</p>
+5. transition-timing-function  运行轨迹 
+   1. ease 默认 开始稍慢 结束更慢
+   2. liner   线性
+   3. ease-in  开始慢后面快
+   4. ease-out 开始快后边慢
+   5. ease-in-out  开始慢中间快结束慢
+   6. steps(3,start)  step-end step-start}  帧动画
+6. transition-delay：1s   鼠标移出取消 延迟过渡
+
+### 动画
+
+
 ### 其他
 * background-clip :content-box  不包括padding
 https://mubu.com/colla/2GHhOkgaWk9
