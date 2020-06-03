@@ -1,12 +1,20 @@
-function a() {
-/*select 0 未选中，1 选中 */
 
-let order_num = ""
+let numbers = [1,2,4,5,6,7,2,2,2,2]
 
-if(order_num==""||parseInt(order_num)<=0||order_num==null){
-   // alert((item.type_name||"") +"类型产品数量有误")}
-   console.log("11")
+
+function reduce_count(arr,item){
+    // rval val key arr
+   return  arr.reduce((a,b,c,d)=>{
+        return a += item == b?1:0 
+    },0)
+
 }
 
+function reduce_max(arr){
+    // rval val key arr
+   return  arr.reduce((a,b,c,d)=>{
+        return a>b?a:b
+    })
+
 }
-    a();
+console.log(reduce_max(numbers));
