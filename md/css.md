@@ -126,9 +126,36 @@
    6. steps(3,start)  step-end step-start}  帧动画
 6. transition-delay：1s   鼠标移出取消 延迟过渡
 
-### 动画
+### 帧动画
+```
+@keyframes name{
+   属性重叠，谁在后边谁的优先级高。
+   /*不配置start end 帧的话 自动配置*/
+   25% {
 
+   }
+   50% {
 
+   }
+
+   25%，75%{}    //公共属性
+}
+
+body {
+   animation-name:name
+   animation-duration:2s
+   animation-fill-mode: forwards  || backwards 没动的时候使用起始值  //填充模式
+   // backwards  :等待的时候应用第一帧       forwards：结束完毕，定到结束帧   both  兼顾1，3.
+   animation-delay:4s   延时
+   animation-iteration-count:2||1c infinite 无限     //动画执行的次数
+   animation-direction:nomarl ||reverse  || alternate || alternate-reverse  平滑处理
+   animation-play-state:paused  暂停|| running 运动
+   animation: name duration ?delay backwards 
+}
+
+```
 ### 其他
 * background-clip :content-box  不包括padding
+* box-shadow: 55px 55px 0 currentColor; 表示获取color的颜色
+* 
 https://mubu.com/colla/2GHhOkgaWk9
