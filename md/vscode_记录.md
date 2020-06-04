@@ -12,7 +12,14 @@
 * Prettier - code formatter  代码格式化
 * Todo Tree
 * Visual Studio intellicode
-* 
+* Turbo console.log()  日志记录，打印 取消注释alt shift u /c /d
+> ctrl + alt + l 选中变量之后，使用这个快捷键生成 console.log
+> alt + shift + c 注释所有 console.log
+> alt + shift + u 启用所有 console.log
+> alt + shift + d 删除所有 console.log
+
+* Quokka 立即运行输入的js代码。 显示结果
+* fundebug 
 #### js html css
 - CSS Peek
 - Debugger for Chrome
@@ -37,3 +44,6 @@
 #### markdown
 1. ^b 加粗 ^i 斜体
 ### 其他
+> 安装 fria code  
+> brew tap homebrew/cask-fonts
+> brew cask install font-fira-code

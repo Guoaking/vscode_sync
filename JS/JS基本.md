@@ -12,7 +12,7 @@ s.description
 
  ```
 
-##### set 
+##### 方法 set 
 
 1. Array.from("set")
  [..set] 
@@ -33,8 +33,8 @@ s.description
 
 4. WeakSet()   // 不能迭代,不重复&&引用类型 ,弱引用
 
-#### map   好多类型键   
-   ```
+#### 方法 map   好多类型键   
+   ```JavaScript
    let map = new Map()
    map.set()
    let boolean = map.delete()
@@ -54,7 +54,7 @@ s.description
 
 
 
-#### 数组
+#### 方法 数组基本操作
 ##### 操作
 
 1. 展开and push
@@ -66,7 +66,7 @@ s.description
 
    
    ```
-2. 解构  数组|对象|字符串 批量赋值给.
+2. 解构  数组|对象|字符串 批量赋值给...
    ```
    必须有声明 let
    let arr = ["",2]
@@ -120,8 +120,8 @@ s.description
    ```
    // a.val-b.val 从小到大.
    arr.sort(function(a,b){return a-b })
-9. 遍历
-    ```
+9. ##### 方法 数组一堆遍历
+    ```JavaScript
     for of?  value 是每一个值  引用类型改变原数组
      
     for in?  key  是每一索引 同of
@@ -149,9 +149,6 @@ s.description
     ```
     // true 要 false 不要
     arr.filter(function(value,index,arr){item.score >=60})
-    
-
-
      
 
 ##### 注意小点
@@ -206,6 +203,5 @@ console.timeEnd("for")
     }
     ```
 4. 第三方库 Moment.js
-## 方法
 ## 其他
 ## 高级
