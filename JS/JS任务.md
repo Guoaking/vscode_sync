@@ -1,7 +1,7 @@
 ## 任务
 
 ### Promise 微任务 优先级高
-```
+```javascript
 promise.resolve()
 new Preomise(resolve,reject)=>{
     reslove("成功通知")
@@ -15,12 +15,38 @@ new Preomise(resolve,reject)=>{
 },reason=>{
     console.log(失败)
 })
+/*api
+带有then 方法
+reslove 成功  做缓存？
+reject 失败  改变状态
+all 批量处理promise 获取数据
+allSettled  成功拒绝都接收 
+race 谁快取谁
+*/ 
+
+
+
 
 
 微任务  优先级高  promise
 宏任务
 定时器也要排队。  宏任务 时间短优先级高
 ```
+#### 方法 Preomse的setTimeout
+```javascript
+function timeout(delay = 1000){
+    return new Promise(reslove=>setTimeout(resolve,delay))
+}
+timeout(2000).then(()=>{
+    console.log("111")
+    return timeout(2000)
+}).then(value=>{
+    console.log("222")
+})
+```
+
+}
+
 
 ### 异步
 * js是单线程的。
