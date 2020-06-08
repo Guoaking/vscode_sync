@@ -53,3 +53,27 @@ timeout(2000).then(()=>{
 
 
 ### ajax
+
+### async与await
+```javascript
+//async 等于new Promise
+//await  类似 then
+// 延迟函数
+async function sleep(delay=2000){
+    let name = await "str";
+    return await new Promist(resolve=>{
+        setTimeout(()=>{
+            resolve()
+        },delay)
+    })
+}
+
+async function show(){
+    for(const user of ['1','2']){
+        await sleep();
+        console.log(user)
+    }
+}
+show();
+
+// await 加载进度条

@@ -57,29 +57,38 @@ s.description
 #### 方法 数组基本操作
 ##### 操作
 
-1. 展开and push
+1. 类型检测与转换
    ```
-   [...arr,...hd]
+   Array.isArray()  //判断是否为数组
+   let hd = [1,2,3].join("-")    //转为string 
+   Array.from(str,function)  ||str.split(",")         //dom元素 有length属性的转为数组  对象有length
+
+
+   
+2. 展开and push
+   ```
+   [...arr,...hd]  || arr.push(hd)
    //dom 展开
-    [...div]  
+    [...div]    dom边div
     Array.prototype.map.call(div,function(item){})
 
    
    ```
-2. 解构  数组|对象|字符串 批量赋值给...
+3. 解构  数组|对象|字符串 批量赋值给...
    ```
    必须有声明 let
    let arr = ["",2]
    //函数 get return []   name 不写 ,占位 获得year   能得到[str,array] 可写默认值
    let [name,year||...year = 2010 ] = get() 
    // [..."str"]  直接拆成数组 相当于split?
+   // 函数返回值是数组 直接赋值？
    ```
-3. 追加
+4. 追加
    ```
    //
    arr[arr.length] = str
    [...arr,arr2]
-   *array.push("","","")
+   let length = array.push("","","")
    let length = push (...arr)
    // 前面追加
    let length= arr.unshift("str","str2")
@@ -88,39 +97,41 @@ s.description
    arr.concat(arr2)
 
 
-4. 移除
+5. 移除
    ```
    // 返回 后面移除的值
    let val = array.pop()
    //前面弹出 移除的值
    let val = array.shift()
-5. 截取
+6. 截取
    ```
-   //下标1,2 质检的值 不改变
+   //下标1,2 质检的值 不改变  从哪开始截，截到哪块  什么都没有写，截所有，1个参数从开始到最后
    arr.slice(1,2)   
    // 从0开始截 2个 改变原数组 添加str //移除//替换//中间夹 1,0 "str"
-   arr.splice(0,2,"str")
-6. 清空
+   arr.splice(0,2,"str")  替换
+   arr.splice(1,0,"str")  追加
+7. 清空
    ```
    arr =[]
    arr.length = 0   //彻底
    arr.splice (0,arr.length)
    while(arr.pop()){}
-7. 查找
+8. 查找
    ```
    arr.indexof(val,startpos)
    arr.lastIndexof(val,-startpos)
    //不适合引用类型
    let boolean = arr.includes(val)
-   //遍历数组 |object 有一个就返回值
+   //遍历数组 |object 有一个就返回值 适合引用类型
    arr.find(function(item){})
    //返回下标
    arr.findIndex(function(item){})
-8. 排序
+9.  排序
    ```
    // a.val-b.val 从小到大.
    arr.sort(function(a,b){return a-b })
-9. ##### 方法 数组一堆遍历
+   ```」
+11. ##### 方法 数组一堆遍历
     ```JavaScript
     for of?  value 是每一个值  引用类型改变原数组
      
@@ -145,7 +156,7 @@ s.description
     //pre 上一次返回的val 第一次可init  做统计 最大值 去重 (arr.includes(str)===false) arr.push(str)  arr.find
     let status = arr.reduce(function(pre,value,index,arr){item.score >=60},初始值0)
     
-10. 过滤
+12. 过滤
     ```
     // true 要 false 不要
     arr.filter(function(value,index,arr){item.score >=60})
