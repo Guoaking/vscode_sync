@@ -1,14 +1,16 @@
 
- 
- let a = {
 
-    name : "111",
-    age :"222",
-    
- }
+let info = [{
+    "": "",
 
 
+}
+
+
+]
 
 
 
-console.log((typeof(a.species) == "undefined")?"1":"2")
+
+
+console.log((typeof (a.species) == "undefined") ? "1" : "2")
