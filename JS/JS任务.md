@@ -5,7 +5,7 @@
 promise.resolve()
 new Preomise(resolve,reject)=>{
     reslove("成功通知")
-    reject（"失败通」知"）
+    reject（"失败通知"）
 }.then(value=>{
     console.log(成功)
 },reason=>{
