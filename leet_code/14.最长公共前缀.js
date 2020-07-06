@@ -9,8 +9,8 @@
  * @param {string[]} strs
  * @return {string}
  * 编写一个函数来查找字符串数组中的最长公共前缀。
- * 适用场景：
- * 实现思路：
+ * 适用场景：找一个数组内的不同或者相同？
+ * 实现思路：2层for循环 脑子没转过来
  * ===字符串 可以直接遍历 数字不行===
 
 如果不存在公共前缀，返回空字符串 ""。
@@ -51,9 +51,4 @@ var longestCommonPrefix = function(strs) {
 let a = ["flower","flow","flight"]
 console.log(longestCommonPrefix(a));
 
-let b = 123
-for (let i = 0; i < b.length; i++) {
-    console.log(b[i]);
-    
-}
-console.log(b.length());
+

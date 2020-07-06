@@ -1,144 +1,205 @@
-let res2_0 = [
+let a = [
   {
-    "_id": "5ef1552974ba9e3e9979bd03",
-    "creat_name": null,
-    "shift_name": "1",
-    "time": "9:30-12:00",
-    "shift_duration": "3小时",
-    "is_night": "是",
-    "color": "12",
-    "content": "12",
-    "hex_create_time": 1592874281093,
-    "hex_update_time": 1593163034631,
-    "__visible": false,
-    "sort": "1"
+    "_id": "5efd94f0601cc0613beb07b5",
+    "company_id": "5ef9a65f3fc4232422bce5dc",
+    "company_name": "航天中心医院",
+    "date": 1594857600000,
+    "quotas": "3",
+    "count": "3",
+    "data_before": "3",
+    "partment": "",
+    "cuser_id": "5ef9a65f3fc4232422bce606",
+    "cuser_name": "院长",
+    "s_quotas": "3",
+    "time": "2020-7-16",
+    "color": "green",
+    "type": "normal",
+    "text": "剩余3"
   },
   {
-    "_id": "5ef3312933ee876d0db3b88e",
-    "creat_name": null,
-    "shift_name": "2",
-    "time": "13:00-19:00",
-    "shift_duration": "6小时",
-    "is_night": "否",
-    "color": "12",
-    "content": "12",
-    "hex_create_time": 1592996137099,
-    "hex_update_time": 1593163008925,
-    "__visible": false,
-    "sort": "2"
+    "_id": "5efd94f0601cc0613beb07b6",
+    "company_id": "5ef9a65f3fc4232422bce5dc",
+    "company_name": "航天中心医院",
+    "date": 1594944000000,
+    "quotas": "3",
+    "count": "3",
+    "data_before": "3",
+    "partment": "",
+    "cuser_id": "5ef9a65f3fc4232422bce606",
+    "cuser_name": "院长",
+    "s_quotas": "3",
+    "time": "2020-7-17",
+    "color": "green",
+    "type": "normal",
+    "text": "剩余3"
   },
   {
-    "_id": "5ef5bc65641e56260906d800",
-    "creat_name": "",
-    "shift_name": "3",
-    "time": "19:00-20:00",
-    "shift_duration": "3小时",
-    "is_night": "是",
-    "color": "12",
-    "content": "12",
-    "sort": "3",
-    "hex_create_time": 1593162853260,
-    "hex_update_time": 1593162971846,
-    "__visible": false
+    "_id": "5efd94f0601cc0613beb07b7",
+    "company_id": "5ef9a65f3fc4232422bce5dc",
+    "company_name": "航天中心医院",
+    "date": 1595030400000,
+    "quotas": "3",
+    "count": "3",
+    "data_before": "3",
+    "partment": "",
+    "cuser_id": "5ef9a65f3fc4232422bce606",
+    "cuser_name": "院长",
+    "s_quotas": "3",
+    "time": "2020-7-18",
+    "color": "red",
+    "type": "disabled",
+    "text": "已过期"
+  },
+  {
+    "_id": "5efdb55d8db50602cc58543c",
+    "company_id": "5ef9a65f3fc4232422bce5dc",
+    "company_name": "航天中心医院",
+    "date": 1593734400000,
+    "quotas": "1",
+    "count": "1",
+    "data_before": "1",
+    "partment": "",
+    "cuser_id": "5ef9a65f3fc4232422bce606",
+    "cuser_name": "院长",
+    "s_quotas": "1",
+    "time": "2020-7-3",
+    "color": "red",
+    "type": "disabled",
+    "text": "已过期"
+  },
+  {
+    "_id": "5efdb55d8db50602cc58543d",
+    "company_id": "5ef9a65f3fc4232422bce5dc",
+    "company_name": "航天中心医院",
+    "date": 1593820800000,
+    "quotas": "1",
+    "count": "1",
+    "data_before": "1",
+    "partment": "",
+    "cuser_id": "5ef9a65f3fc4232422bce606",
+    "cuser_name": "院长",
+    "s_quotas": "1",
+    "time": "2020-7-4",
+    "color": "red",
+    "type": "disabled",
+    "text": "已过期"
+  },
+  {
+    "_id": "5efdb55d8db50602cc58543e",
+    "company_id": "5ef9a65f3fc4232422bce5dc",
+    "company_name": "航天中心医院",
+    "date": 1593907200000,
+    "quotas": "3",
+    "count": "3",
+    "data_before": "3",
+    "partment": "",
+    "cuser_id": "5ef9a65f3fc4232422bce606",
+    "cuser_name": "院长",
+    "s_quotas": "3",
+    "time": "2020-7-5",
+    "color": "red",
+    "type": "disabled",
+    "text": "已过期"
+  },
+  {
+    "_id": "5efdb5d78db50602cc58543f",
+    "company_id": "5ef9a65f3fc4232422bce5dc",
+    "company_name": "航天中心医院",
+    "date": 1593561600000,
+    "quotas": "1",
+    "count": "1",
+    "data_before": "1",
+    "partment": "",
+    "cuser_id": "5ef9a65f3fc4232422bce606",
+    "cuser_name": "院长",
+    "s_quotas": "1",
+    "time": "2020-7-1",
+    "color": "red",
+    "type": "disabled",
+    "text": "已过期"
+  },
+  {
+    "_id": "5efdb5d78db50602cc585440",
+    "company_id": "5ef9a65f3fc4232422bce5dc",
+    "company_name": "航天中心医院",
+    "date": 1593648000000,
+    "quotas": "1",
+    "count": "1",
+    "data_before": "1",
+    "partment": "",
+    "cuser_id": "5ef9a65f3fc4232422bce606",
+    "cuser_name": "院长",
+    "s_quotas": "1",
+    "time": "2020-7-2",
+    "color": "red",
+    "type": "disabled",
+    "text": "已过期"
   }
 ]
 
+var aa = function (date, now) {
+  /*数据处理*/
 
+  
+  let a = date
+  let b = now
+  let da = new Date()
 
-let work_list = [
-  {
-    "_id": "5ef9cde351b2c0791857a9e7",
-    "w_name": "大头",
-    "w_pname": "凯医生",
-    "w_date": 1,
-    "shift_name": "1",
-    "w_others": "",
-    "enterprise_id": "5ef9a65f3fc4232422bce5dc",
-    "date": 1593429475575,
-    "w_pname_id": "5ef9a713a64a293792626aa3",
-    "w_name_id": "5ef9ba21df504257693f83b2",
-    "removed": 0,
-    "hex_create_time": 1593429475613,
-    "hex_update_time": 1593429475613
-  },
-  {
-    "_id": "5ef9cde351b2c0791857a9e8",
-    "w_name": "大头",
-    "w_pname": "陈医生",
-    "w_date": 1,
-    "shift_name": "1",
-    "w_others": "",
-    "enterprise_id": "5ef9a65f3fc4232422bce5dc",
-    "date": 1593429475575,
-    "w_pname_id": "5ef9ab15a64a293792626ad1",
-    "w_name_id": "5ef9ba21df504257693f83b2",
-    "removed": 0,
-    "hex_create_time": 1593429475619,
-    "hex_update_time": 1593429475619
-  },
-  {
-    "_id": "5ef9cdc751b2c0791857a9e6",
-    "w_name": "大头",
-    "w_pname": "陈医生",
-    "w_date": 1,
-    "shift_name": "4",
-    "w_others": "",
-    "enterprise_id": "5ef9a65f3fc4232422bce5dc",
-    "date": 1593429447581,
-    "w_pname_id": "5ef9ab15a64a293792626ad1",
-    "w_name_id": "5ef9ba21df504257693f83b2",
-    "removed": 0,
-    "hex_create_time": 1593429447618,
-    "hex_update_time": 1593429447618
-  }
-]
-
-function a(list1,list2) {
-  var arr = []
-
-  for (var j = 0; j < list1.length; j++) {
-    var obj = {}
-    var item = list1[j];
-    var wuList = [];
-    for (var i = 0; i < 7; i++) {
-      wuList.push({
-        w_pname: '无',
-        w_date: i + 1,
-        shift_name: item.shift_name,
-        user_list: []
-      })
+  for (let i = 0; i < a.length; i++) {
+    let count = 24 * 60 * 60 * 1000;
+    /**一天 */
+    if(a[i].count>0){
+      count = count * a[i].count
+    }{
+      count =  count*0
     }
+    
+    let ba = da.setTime(a[i].date)
+    let temp = timestampToTime(ba)
+    if (temp.charAt(5) == "0") {
 
-    obj['time'] = item.time
-    obj['list'] = wuList
-
-
-    for (var i = 0; i < list2.length; i++) {
-      var item2 = list2[i];
-      item2.user_list = [item2.w_pname_id]
-      var index = item2.w_date - 1;
-      console.log("来了来了2")
-     // console.log(item2)
-      if(item2.shift_name==item.shift_name){
-        console.log("来了来了4")
-        if (obj['list'][index].w_pname == '无') {
-          obj['list'][index] = item2;
-        } else {
-          obj['list'][index].w_pname = obj['list'][index].w_pname + ',' + item2.w_pname;
-          obj['list'][index].user_list.push(item2.w_pname_id)
-        }
+      temp = temp.split("")
+      temp.splice(5, 1)
+      temp = temp.join("")
+      a[i].time = temp;
+    } else {
+      a[i].time = timestampToTime(ba)
+    }
+    a[i].nice = parseInt(ba) - parseInt(count)
+    if (parseInt(b) < (parseInt(ba) - parseInt(count))) {
+      if (a[i].s_quotas > 0) {
+        a[i].color = "green"
+        a[i].type = "normal"
+        a[i].text = `剩余${a[i].s_quotas}`
+      } else {
+        a[i].color = "red"
+        a[i].type = "disabled"
+        a[i].text = "无名额"
       }
-
+    } else {
+      a[i].color = "red"
+      a[i].type = "disabled"
+      a[i].text = "已失效"
     }
-    arr.push(obj)
   }
-
-
-
-
-  return arr
-
+  return a
 
 }
-let b = a(res2_0,work_list)
-console.log(JSON.stringify(b,null,2))
+/**7-2  */
+let count = 24 * 60 * 60 * 1000;
+console.log(parseInt(1595030400000) - parseInt(count*3))
+// console.log(aa(a, "1593686633015"))
+let da = new Date()
+let ba = da.setTime(1595088000000)
+function timestampToTime(timestamp) {
+  var date = new Date(timestamp);//时间戳为10位需*1000，时间戳为13位的话不需乘1000
+  Y = date.getFullYear() + '-';
+  M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+  D = date.getDate();
+  return Y + M + D;
+}
+
+
+let b  = 17835706945
+let bb = b.toString()
+console.log(typeof(b));
