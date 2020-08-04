@@ -1,0 +1,42 @@
+//公司id
+@company_id = "5ef9a65f3fc4232422bce5dc"
+@Content-Type= application/json
+@createTime = {{$datetime iso8601}}
+
+
+//=============================航小康==============================
+//航小康开发host    pcweb1-1dwcopss2lw.wuwei-deploy.wudaima.com
+//新奥接口
+@Host =  pcweb1-1dwcopss2lw.wuwei-deploy.wudaima.com
+//查医生
+@finddoc = /flow/api/5ef730c5036206258117b897
+//===========================================================
+
+//==========================新奥=================================
+//@Host =  http://me.enncloud.cn/manageapi/auth/token 
+//
+@findpeople = gw.enncloud.cn/auth/bdm/userApi/queryUsers
+@appKey = 149841ace40949b89a7279a8e1583941
+@appSecret = bc0ddf3d67374d1d917a8e91d7d600ba
+@overContent-type = multipart/form-data
+
+
+###  查医生接口
+POST HTTP://pcweb1-1dwcopss2lw.wuwei-deploy.wudaima.com/flow/api/5ef730c5036206258117b897 
+content-type: application/json
+
+{
+    "company_id":11,
+    "page":"1"
+}
+
+
+###  查医生接口
+POST http://{{findpeople}} 
+content-type: application/json
+
+{
+    "company_id":11,
+    "page":"1"
+}
+

@@ -41,39 +41,45 @@
  */
 var isValid = function (s) {
     let arr = []
-    console.log(s.length)
     let len = s.length
+    console.log(arr,"start")
     if (len % 2) return false;
-    console.log("hello")
-    for (let i = 0; i < len.length; i++) {
-        const element = len[i];
-        console.log(element)
+
+    for (let i = 0; i < len; i++) {
+        const element = s[i];
         switch (element) {
             case "(":
                 arr.push(element)
+                console.log(arr,"push1")
                 break;
             case "[":
                 arr.push(element);
+                console.log(arr,"push2")
                 break;
             case "{":
                 arr.push(element)
+                console.log(arr,"push3")
                 break;
             case ")":
-                console.log('hello');
-                
+
                 if (arr.pop() !== "(") return false;
+                console.log(arr,"pop1")
                 break;
             case "]":
                 if (arr.pop() !== "[") return false;
+                console.log(arr,"pop2")
                 break;
             case "}":
                 if (arr.pop() !== "{") return false;
+                console.log(arr,"pop3")
                 break;
         }
     }
+    console.log(arr,"end")
     return !arr.length
 };
 // @lc code=end
 
-console.log(isValid("([)]"));
+console.log(isValid("()[(]]"));
 
+[[(]
