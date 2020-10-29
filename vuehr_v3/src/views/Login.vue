@@ -66,8 +66,11 @@ export default {
       this.$refs.loginForm.validate(valid => {
         if (valid) {
           this.postKVRequest("/doLogin", this.loginForm).then(resp => {
+            // loading 效果
             this.loading2 = false;
             if (resp) {
+              // 登录成功！~ 消息存currentHr 信息
+              this.$store.commit("INIT_CURRENTHR",resp.obj)
               window.sessionStorage.setItem("user", JSON.stringify(resp.obj));
               // 拿到url中是否有redirect参数
               let path = this.$route.query.redirect;
@@ -76,10 +79,6 @@ export default {
               );
             }
           });
-          // this.$message({
-          //   message: '登录成功！',
-          //   type: 'success'
-          // });
         } else {
           this.$message.error("请输入所有字段后重试！");
           return false;

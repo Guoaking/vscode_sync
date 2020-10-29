@@ -4,25 +4,29 @@
       <!-- 头部 -->
       <el-header class="homeHeader">
         <div class="title">微人事</div>
-        <el-dropdown
-          class="userInfo"
-          @command="commandHandler"
-        >
-          <span class="el-dropdown-link">
-            {{user.name}}<i><img
-                :src="user.userface"
-                alt="用户头像"
-              ></i>
-          </span>
-          <el-dropdown-menu slot="dropdown">
-            <el-dropdown-item command="userinfo">个人中心</el-dropdown-item>
-            <el-dropdown-item command="setting">设置</el-dropdown-item>
-            <el-dropdown-item
-              command="logout"
-              divided
-            >注销登录</el-dropdown-item>
-          </el-dropdown-menu>
-        </el-dropdown>
+        <div>
+          <el-button type="text" icon="el-icon-bell" style="margin-right:8px; color:#000000;" size="normal" @click="goChat"></el-button>
+          <el-dropdown
+            class="userInfo"
+            @command="commandHandler"
+          >
+            <span class="el-dropdown-link">
+              {{user.name}}<i><img
+                  :src="user.userface"
+                  alt="用户头像"
+                ></i>
+            </span>
+            <el-dropdown-menu slot="dropdown">
+              <el-dropdown-item command="userinfo">个人中心</el-dropdown-item>
+              <el-dropdown-item command="setting">设置</el-dropdown-item>
+              <el-dropdown-item
+                command="logout"
+                divided
+              >注销登录</el-dropdown-item>
+            </el-dropdown-menu>
+          </el-dropdown>
+
+        </div>
       </el-header>
       <!-- 左--右 -->
       <el-container>
@@ -55,16 +59,22 @@
         <el-main>
           <!-- main -->
           <!-- 面包屑 -->
-          <el-breadcrumb separator-class="el-icon-arrow-right" v-if="this.$router.currentRoute.path!='/home'">
+          <el-breadcrumb
+            separator-class="el-icon-arrow-right"
+            v-if="this.$router.currentRoute.path!='/home'"
+          >
             <el-breadcrumb-item :to="{ path: '/home' }">首页</el-breadcrumb-item>
             <el-breadcrumb-item>{{this.$router.currentRoute.name}}</el-breadcrumb-item>
           </el-breadcrumb>
-          <div v-if="this.$router.currentRoute.path=='/home'" class="homeWelcome">
+          <div
+            v-if="this.$router.currentRoute.path=='/home'"
+            class="homeWelcome"
+          >
             欢迎来到微人事！
 
           </div>
           <!-- 路由 -->
-          <router-view  class="homeRouterView" />
+          <router-view class="homeRouterView" />
         </el-main>
       </el-container>
     </el-container>
@@ -85,6 +95,10 @@ export default {
     }
   },
   methods: {
+    // 去聊天
+    goChat(){
+      this.$router.push("/chat")
+    },
     //注销操作
     commandHandler(cmd) {
       if (cmd == "logout") {
@@ -121,10 +135,10 @@ export default {
 </script>
 
 <style>
-.homeRouterView{
+.homeRouterView {
   margin-top: 20px;
 }
-.homeWelcome{
+.homeWelcome {
   text-align: center;
   font-size: 30px;
   color: #409eff;
