@@ -1,42 +1,51 @@
 //公司id
-@company_id = "5ef9a65f3fc4232422bce5dc"
+@overContent-type = multipart/form-data
 @Content-Type= application/json
 @createTime = {{$datetime iso8601}}
+@localhost = localhost:8080
+@localhost2 = http://localhost:8080
 
 
-//=============================航小康==============================
-//航小康开发host    pcweb1-1dwcopss2lw.wuwei-deploy.wudaima.com
-//新奥接口
-@Host =  pcweb1-1dwcopss2lw.wuwei-deploy.wudaima.com
-//查医生
-@finddoc = /flow/api/5ef730c5036206258117b897
-//===========================================================
-
-//==========================新奥=================================
-//@Host =  http://me.enncloud.cn/manageapi/auth/token 
-//
-@findpeople = gw.enncloud.cn/auth/bdm/userApi/queryUsers
-@appKey = 149841ace40949b89a7279a8e1583941
-@appSecret = bc0ddf3d67374d1d917a8e91d7d600ba
-@overContent-type = multipart/form-data
 
 
-###  查医生接口
-POST HTTP://pcweb1-1dwcopss2lw.wuwei-deploy.wudaima.com/flow/api/5ef730c5036206258117b897 
+//=============================jpa本机测试==============================
+@jpafindall = /api/bs
+
+### get请求所有
+GET {{localhost2}}{{jpafindall}}
+content-type: application/json
+
+### get查看提供的接口
+GET {{localhost2}}{{jpafindall}}/search
+content-type: application/json
+
+### 
+get http://localhost:8080/bs/search/findByName?name=西
+
+### post新增
+POST HTTP:{{localhost}}{{jpafindall}}
 content-type: application/json
 
 {
-    "company_id":11,
-    "page":"1"
+    "name":"朝花夕拾",
+    "author":"鲁迅"
 }
 
-
-###  查医生接口
-POST http://{{findpeople}} 
-content-type: application/json
+### put修改
+PUT {{localhost2}}{{jpafindall}}/7
+Content-Type: {{Content-Type}}
 
 {
-    "company_id":11,
-    "page":"1"
+    "name":"朝花夕拾",
+    "author":"鲁迅1"
 }
+
+
+### delete 删除
+DELETE  {{localhost2}}{{jpafindall}}/7
+
+
+
+
+
 

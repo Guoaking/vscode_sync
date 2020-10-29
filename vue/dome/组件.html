@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>组件化</title>
+</head>
+<body>
+    <div id="app">
+        <javaboy v-bind:name="hello"></javaboy>
+    </div>
+    
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    Vue.component("javaboy",{
+        props:['name'],
+        template:'<h1>{{name}}</h1>'
+    })
+    var app = new Vue({
+        el:"#app",
+        data:{
+            val:2,
+            hello:"你好a"
+        },
+        methods:{
+            sub:function(index){
+                this.msg.splice(index,1)
+            },
+            clear:function(){
+                this.msg.splice(0,this.msg.length) 
+             }
+        },
+        created(){
+            console.log("初始化");
+        }
+    })
+
+    console.log(app.$data,"123");
+    
+
+</script>
+</html>

@@ -9,6 +9,12 @@
     <div class="app">
         {{msg}}
         <button @click="cbtn">点我</button>
+
+        <table border="1">
+            <tr v-for="i in num">
+                <td v-for="j in i">{{j}}*{{i}}={{j*i}}</td>
+            </tr>
+        </table>
     </div>
 
     <div id="count">
@@ -28,6 +34,8 @@
         </li>
 
     </div>
+
+    
 </body>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
@@ -38,7 +46,8 @@
             val:2,
             text:2,
             show:true,
-            msg:["111"]
+            msg:["111"],
+            num:9,
             
         },
         methods:{

@@ -20,6 +20,10 @@
 
 * Quokka 立即运行输入的js代码。 显示结果
 * fundebug 
+* Colorful Comments   彩色注释
+* WakaTime           看板插件 统计开发者一天的编码情况
+* Rainbow            csv 文件
+* 100Days of code     100天目标
 #### js html css
 - CSS Peek
 - Debugger for Chrome
@@ -30,6 +34,7 @@
 - Live Server
 - open in *browser*
 - Vetur
+- arrr   快速把html代码提取成一个组件
 
 #### markdown
 - Markdown All in one
@@ -44,6 +49,6 @@
 #### markdown
 1. ^b 加粗 ^i 斜体
 ### 其他
-> 安装 fria code  
+> 安装 fria code 连体字 
 > brew tap homebrew/cask-fonts
 > brew cask install font-fira-code
