@@ -1,10 +1,9 @@
-
 /**
  * 
  */
 public class 单链表 {
     public static void main(String[] args) {
-        
+        System.out.println("231");
     }
 }
 
