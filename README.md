@@ -29,4 +29,33 @@ $\color{#4285f4}{G}\color{#ea4335}{o}\color{#fbbc05}{o}\color{#4285f4}{g}\color{
 
 <table><tr><td bgcolor=#7FFFD4>这里的背景色是：Aquamarine，  十六进制颜色值：#7FFFD4， rgb(127, 255, 212)</td></tr></table>
 
+撤销：<kbd>Ctrl/Command</kbd> + <kbd>Z</kbd>
 
+`toc`
+
+
+
+~~删除文本~~
+
+
+
+[百度](https://www.baidu.com)
+
+![Alt](url)
+
+
+- [ ] 计划任务
+
+- [x] 完成任务
+
+| 第一列       | 第二列         | 第三列        |
+|:-----------:| -------------:|:-------------|
+| 第一列文本居中 | 第二列文本居右  | 第三列文本居左 |
+
+Markdown将文本转换为 HTML。
+
+*[HTML]:   超文本标记语言
+
+一个具有注脚的文本。[^1]
+
+[^1]: 注脚的解释
