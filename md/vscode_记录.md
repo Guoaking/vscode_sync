@@ -12,6 +12,7 @@
 * Prettier - code formatter  代码格式化
 * Todo Tree
 * Visual Studio intellicode
+* comment Translate
 * Turbo console.log()  日志记录，打印 取消注释alt shift u /c /d
 > ctrl + alt + l 选中变量之后，使用这个快捷键生成 console.log
 > alt + shift + c 注释所有 console.log

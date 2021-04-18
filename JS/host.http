@@ -45,6 +45,15 @@ Content-Type: {{Content-Type}}
 DELETE  {{localhost2}}{{jpafindall}}/7
 
 
+PUT {{localhost2}}{{jpafindall}}/7
+Content-Type: {{Content-Type}}
+
+{
+    "name":"朝花夕拾",
+    "author":"鲁迅1"
+}
+
+
 
 
 
