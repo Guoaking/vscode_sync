@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div>
+            <audio controls ref="audio"></audio>
+            
+            <div>
+                <select name="audio" id="audio_select" v-model="selectedAudioIndex">
+                    <option v-for="(d,index) in audioInputDevices" :value="index">{{d.label}}</option>
+                </select>    
+            </div>
+            <button @click="audio_start" :disabled="audio_isRecording">开始</button>
+            <button @click="audio_pause" :disabled="audio_isPaused||!audio_isRecording">暂停</button>
+            <button @click="audio_restart" :disabled="!audio_isPaused||!audio_isRecording">重新开始</button>
+            <button @click="audio_stop" :disabled="!audio_isRecording">停止</button>
+            <button @click="audio_play" :disabled="!currentWebmData">播放</button>
+        </div>
+
+
+
+        <div>
+            <video autoplay width="400" height="400" ref = "video"></video>
+            <button @click="takePhoto">拍摄</button>
+            <button @click="video_start" :disabled="video_isRecording">开始</button>
+            <button @click="video_pause" :disabled="video_isPaused||!video_isRecording">暂停</button>
+            <button @click="video_restart" :disabled="!video_isPaused||!video_isRecording">重新开始</button>
+            <button @click="video_stop" :disabled="!video_isRecording">停止</button>
+            <button @click="video_play" :disabled="!currentWebmData">播放</button>
+            <video controls width="400" height="400" ref = "video2"></video>
+            <canvas width="400" height="400" ref = "canvas"></canvas>
+        </div>
+    </div>
+</body> 
+<script src="../../ref/vue.js" ></script>
+<script>
+    
+new Vue({
+    el:"#app",
+    data:{
+        audioInputDevices:[],
+        selectedAudioIndex:0,
+        currentWebmData:null,
+        audio_isRecording:false,
+        audio_isPaused:true,
+
+        video_isRecording:false,
+        video_isPaused:true,
+
+    },
+    mounted() {
+        this._initVueApp();
+    },
+    watch:{
+        // selectedAudioIndex(val,old){
+        //     this.showSelectedDevices()
+        // }
+    },
+    methods: {
+        async _initVueApp(){
+            let devices = await navigator.mediaDevices.enumerateDevices();
+            console.log(devices);
+            let audioInputDevices = devices.filter(
+                value => value.kind === 'audioinput'
+            )
+            this.audioInputDevices.length = 0;
+            this.audioInputDevices.push(...audioInputDevices);
+
+
+            // 录制audio
+             this._audioStream = await navigator.mediaDevices.getUserMedia({video:false,audio:true });
+            // this._recorder = new MediaRecorder(this._audioStream,{mimeType:"video/webm;codecs=h264"});
+            // this._recorder.ondataavailable = this.recorder_dataAvailableHandler.bind(this);
+            
+            // 录制video
+            // this._videoStream = await navigator.mediaDevices.getUserMedia({video:true,audio:true });
+            // this._videoRecorder = new MediaRecorder(this._videoStream,{mimeType:"video/webm;codecs=h264"});
+            // this._videoRecorder.ondataavailable = this.recorder_dataAvailableHandler.bind(this);
+
+            // // 直出
+            // this.$refs.video.srcObject = this._videoStream;
+            // this._context2d = this.$refs.canvas.getContext("2d");
+
+
+            // 录制屏幕
+            this._displayStream = await navigator.mediaDevices.getDisplayMedia();
+            this._videoRecorder = new MediaRecorder(this._displayStream,{mimeType:"video/webm;codecs=h264"});
+            this._videoRecorder.ondataavailable = this.recorder_dataAvailableHandler.bind(this);
+            
+            this._displayStream.getVideoTracks().forEach(element => {
+                this._audioStream.addTrack(element);
+            });
+
+            
+
+            // 直出
+            this.$refs.video.srcObject = this._displayStream;
+            this._context2d = this.$refs.canvas.getContext("2d");
+        },
+        // 展示声音 并切换设备
+        async showSelectedDevices(){
+            let deviceInfo = this.audioInputDevices[this.selectedAudioIndex];
+            let stream = await navigator.mediaDevices.getUserMedia({video:false,audio:deviceInfo });
+            this.$refs.audio.srcObject = stream;
+        },
+        
+        recorder_dataAvailableHandler(e){
+            //data
+            console.log(e); 
+            this.currentWebmData = e.data;
+        },
+        takePhoto(){
+            this._context2d.drawImage(this.$refs.video,0,0,400,400)
+        },
+        audio_start(){
+            // this._recorder.start(1000);   分片 以后合成
+            this._recorder.start();
+            this.audio_isRecording = true;
+            this.audio_isPaused = false;
+        },
+        audio_pause(){
+            this._recorder.pause();
+            this.audio_isPaused = true;
+        },
+        audio_restart(){
+            this._recorder.resume();
+            this.audio_isPaused = false;
+        },
+        audio_stop(){
+            this._recorder.stop();
+            this.audio_isRecording = false;
+        },
+        audio_play(){
+            if(this.currentWebmData==null){
+                console.log("nothing");
+                return;
+            }
+            this.$refs.audio.src = URL.createObjectURL(this.currentWebmData);
+        },
+        video_start(){
+            // this._recorder.start(1000);   分片 以后合成
+            this._videoRecorder.start();
+            this.video_isRecording = true;
+            this.video_isPaused = false;
+        },
+        video_pause(){
+            this._videoRecorder.pause();
+            this.video_isPaused = true;
+        },
+        video_restart(){
+            this._videoRecorder.resume();
+            this.video_isPaused = false;
+        },
+        video_stop(){
+            this._videoRecorder.stop();
+            this.video_isRecording = false;
+        },
+        video_play(){
+            if(this.currentWebmData==null){
+                console.log("nothing");
+                return;
+            }
+            this.$refs.video2.src = URL.createObjectURL(this.currentWebmData);
+        },
+    },
+})
+</script>
+</html>

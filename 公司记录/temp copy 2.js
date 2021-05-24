@@ -1633,3 +1633,27 @@ define(function(require, exports, module) {
 	}
 	
 });
+
+
+
+
+{
+	"output":"test:1.0;test1:1;test3:2;",
+	"timestamp":"16:15:47.994"
+}
+
+
+{
+	"timestamp":"16:15:47.994",
+	"test":"1",
+	"test1":"2",
+	"test2":"4"
+}
+{
+	"timestamp":"16:15:47.994",
+	"test":"1",
+	"test1":"2",
+	"test2":"4"
+}
+
+{"test":1,"test1":"1","test3":"2","output":"test:1.0;test1:1;test3:2;","timestamp":"16:42:47.745"}

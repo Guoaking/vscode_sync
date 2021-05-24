@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div>
+            <audio controls ref="audio"></audio>
+            
+            <button @click="audio_start" :disabled="audio_isRecording">开始</button>
+            <button @click="audio_pause" :disabled="audio_isPaused||!audio_isRecording">暂停</button>
+            <button @click="audio_restart" :disabled="!audio_isPaused||!audio_isRecording">重新开始</button>
+            <button @click="audio_stop" :disabled="!audio_isRecording">停止</button>
+            <button @click="audio_play" :disabled="!currentWebmData">播放</button>
+        </div>
+
+
+
+        <div>
+            <video autoplay width="400" height="400" ref = "video"></video>
+            <button @click="video_start" :disabled="video_isRecording">开始</button>
+            <button @click="video_pause" :disabled="video_isPaused||!video_isRecording">暂停</button>
+            <button @click="video_restart" :disabled="!video_isPaused||!video_isRecording">重新开始</button>
+            <button @click="video_stop" :disabled="!video_isRecording">停止</button>
+            <button @click="video_play" :disabled="!currentWebmData">播放</button>
+            <video controls width="400" height="400" ref = "video2"></video>
+            <canvas ref="canvas" width="400" height="400"></canvas>
+        </div>
+    </div>
+</body> 
+<script src="../../ref/vue.js" ></script>
+<script  src="../js/audio_video.js" ></script>
+</html>
